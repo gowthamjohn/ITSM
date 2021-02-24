@@ -1,5 +1,4 @@
 export const drawRadialTree = function (wholeRecs, param, d3) {
-  console.log('drawing raidal',wholeRecs,param,d3);
   var self = param;
   self.isRadial = true;
   var margin = {
@@ -16,7 +15,6 @@ export const drawRadialTree = function (wholeRecs, param, d3) {
   var topValue = 116;
   var leftValue = 0;
   var treeData = {};
-console.log('before whole records');
   if (wholeRecs == null) {
     treeData.name = data.name;
     treeData.id = data.id;
@@ -134,13 +132,11 @@ console.log('before whole records');
   function dragged() {
     tooltip.transition().style("opacity", 0);
   }
-  console.log('zoomContainer raidal');
   var zoomContainer = d3
     .select(self.template.querySelector(".bodyClass"))
     .append("svg")
     .call(
       d3.zoom().on("zoom", function () {
-        console.log('zoom setting');
         tooltip.transition().style("opacity", 0);
         var transValue = d3.event.transform.k;
         var k = transValue.toFixed(1);
@@ -190,7 +186,6 @@ console.log('before whole records');
     .attr("height", 590)
     .attr("style", "margin-left: 100px;margin-right: 100px;")
     .append("g");
-    console.log('zoomContainer raidal',zoomContainer);
   var svg = zoomContainer.append("g").attr("transform", function (d) {
   self.d3Track = d3;
     return (
