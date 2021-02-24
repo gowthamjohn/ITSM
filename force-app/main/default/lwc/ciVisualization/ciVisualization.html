@@ -1,0 +1,53 @@
+<template>
+    <div class="background">
+        
+    <div class="slds-p-top_x-small slds-p-left_large">
+       <lightning-input data-id="toggle2" class="toggleBox" onchange={changeView} type="toggle" label="" checked={isRadial} message-toggle-active="Radial" message-toggle-inactive="Tidy"></lightning-input>
+    </div>
+        <div if:true={goToButton.top}>
+         <div class="upArrow" onclick={goToTop}><span></span></div>
+         </div>
+        <div if:true={goToButton.bottom}>
+         <div class="downArrow" onclick={goToBottom}><span></span></div>
+        </div>
+
+    <div id='tree'  class="bodyClass"></div>
+   
+    <div if:true={isTab}>
+       <lightning-tabset variant="scoped" >
+
+          <lightning-tab label={nodeName} id={nodeName}>
+
+             <lightning-tabset  variant="scoped" onactive={tabSelect} selected-tab-id={selectedTab}>
+                
+                <lightning-tab label="Incident" id="Incident" onactive={tabSelect}>
+                   <c-related-list record-type-info-str={recordTypeInfoStr} sobject-api-name={objectName} related-field-api-name="citsm__Configuration_Item__c" sorted-by="LastModifiedDate" columns={fieldSetValues}
+                   record-type-filter={recordTypeFilter} fields={fields} record-id={selectedRecordId}  ></c-related-list>
+                </lightning-tab>
+
+                <lightning-tab label="Problem" id="Problem" onactive={tabSelect}>
+                   <c-related-list record-type-info-str={recordTypeInfoStr}  sobject-api-name={objectName} related-field-api-name="citsm__Configuration_Item__c" sorted-by="LastModifiedDate" columns={fieldSetValues}
+                      fields={fields} record-type-filter={recordTypeFilter} record-id={selectedRecordId}  ></c-related-list>
+                </lightning-tab>
+
+                <lightning-tab label="Change" id="Change" onactive={tabSelect}>
+                   <c-related-list record-type-info-str={recordTypeInfoStr}  sobject-api-name={objectName} related-field-api-name="citsm__Configuration_Item__c" sorted-by="LastModifiedDate" columns={fieldSetValues}
+                      fields={fields} record-type-filter={recordTypeFilter} record-id={selectedRecordId}  ></c-related-list>
+                </lightning-tab>
+                <lightning-tab label="Attribute" id="Attribute" onactive={tabSelect}>
+                  <c-related-list record-type-info-str={recordTypeInfoStr}  sobject-api-name={objectName} related-field-api-name="citsm__Configuration_Item__c" sorted-by="LastModifiedDate" columns={fieldSetValues}
+                     fields={fields} record-type-filter={recordTypeFilter} record-id={selectedRecordId}  ></c-related-list>
+               </lightning-tab>
+               
+             </lightning-tabset>
+
+          </lightning-tab>
+
+       </lightning-tabset>
+    </div>
+
+    <div  if:false={isLoaded}>
+       <lightning-spinner class="spinnerRoll" alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+</div>
+ </template>

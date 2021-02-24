@@ -1,0 +1,112 @@
+.background{
+    background-color: white !important;
+}
+.spinnerRoll{
+    z-index: 9999 !important;
+    position: fixed !important;
+}
+.toggleBox{
+    padding-left: 90%;
+}
+.toTheTop {
+    position: absolute;
+    right: 20px;
+    top: 90%;
+    margin-top: -2.5em;
+  }
+
+  .back-to-top {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+.up{
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 48px;
+    width: 48px;
+}
+.upArrow{
+    color : white;
+}
+.slds-button_icon{
+    background-color: yellow;
+}
+.upArrow {
+    position: fixed;
+    right:14px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    z-index: 999;
+    background-color:#3498db;
+    text-indent:-9999px;
+    display:block;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+.upArrow span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+.upArrow:hover {
+    background-color:#e74c3c;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
+.downArrow {
+    position: absolute;
+    right:3px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#3498db;
+    text-indent:-9999px;
+    display:block;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+.downArrow span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -2px;
+    height: 0;
+    width: 0px;
+    border-top-color: white;
+    border-top-style: solid;
+    border-top-width: 8px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 8px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 8px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    
+}
+.downArrow:hover {
+    background-color:#e74c3c;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}

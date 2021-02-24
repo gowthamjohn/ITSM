@@ -1,0 +1,7 @@
+.spinnerRoll{
+    z-index: 9999;
+    position: fixed;
+}
+.slds-p-left_xx-large{
+    padding-left:37% !important;
+}
